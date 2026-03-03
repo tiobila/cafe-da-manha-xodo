@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon padrão -->
+<link rel="icon" type="image/png" sizes="32x32" href="icone1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icone1.png">
+
+
+<!-- Para Apple / iPhone -->
+<link rel="apple-touch-icon" href="icone1.png">
+
+<!-- Manifest (opcional) -->
+<link rel="manifest" href="site.webmanifest">
+
+
+<title>Café da Manhã – xodó</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #193163;
+  margin: 0;
+  padding: 16px;
+}
+
+.container {
+  background: #ffffff;
+  color: #000;
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+/* LOGO */
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.logo img {
+  width: 100%;
+  max-width: 200px;
+}
+
+/* TÍTULO */
+h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* SEÇÕES */
+.section {
+  margin-bottom: 18px;
+}
+.section b {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* 🔥 OPÇÃO COM CHECKBOX À DIREITA */
+.option {
+  display: grid;
+  grid-template-columns: 1fr auto; /* texto | checkbox */
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.option span {
+  text-align: left;
+}
+
+.option input[type="checkbox"] {
+  transform: scale(1.3);
+  margin: 0;
+}
+
+/* INPUTS */
+input, select {
+  width: 100% !important;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  
+}
+input[type="time"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100% !important;
+  max-width: 100%;
+  display: block;
+  
+    /* 🔥 Forçar altura igual no iPhone e Android */
+  height: 48px;
+  line-height: 48px;
+
+  /* Ajustar o texto para não ficar cortado */
+  padding-top: 0;
+  padding-bottom: 0;
+
+  /* Mantém padrão do resto */
+  padding-left: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #999;
+}
+
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  background: #193163;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #999;
+}
+@supports (-webkit-touch-callout: none) {
+  input[type="time"] {
+    padding: 10px 6px !important; 
+  }
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="logo">
+  <img src="logo1.png"  alt="xodó Motel" >
+</div>
+
+
+<div class="section">
+<b>Opções:</b>
+
+<label class="option">
+  <span>Queijo e presunto</span>
+  <input type="checkbox" value="Queijo e presunto">
+</label>
+
+<label class="option">
+  <span>Manteiga</span>
+  <input type="checkbox" value="Manteiga">
+</label>
+
+<label class="option">
+  <span>Pão fatiado</span>
+  <input type="checkbox" value="Pão fatiado">
+</label>
+
+<label class="option">
+  <span>Pão fatiado na chapa</span>
+  <input type="checkbox" value="Pão fatiado na chapa">
+</label>
+
+<label class="option">
+  <span>Cuscuz</span>
+  <input type="checkbox" value="Cuscuz">
+</label>
+
+<label class="option">
+  <span>Café</span>
+  <input type="checkbox" value="Café">
+</label>
+
+<label class="option">
+  <span>Leite</span>
+  <input type="checkbox" value="Leite">
+</label>
+</div>
+
+<div class="section">
+<b>Frutas (2 tipos):</b>
+
+<label class="option">
+  <span>Mamão</span>
+  <input type="checkbox" class="fruta" value="Mamão">
+</label>
+
+<label class="option">
+  <span>Melão</span>
+  <input type="checkbox" class="fruta" value="Melão">
+</label>
+
+<label class="option">
+  <span>Maçã</span>
+  <input type="checkbox" class="fruta" value="Maçã">
+</label>
+
+<label class="option">
+  <span>Banana</span>
+  <input type="checkbox" class="fruta" value="Banana">
+</label>
+
+<label class="option">
+  <span>Uva</span>
+  <input type="checkbox" class="fruta" value="Uva">
+</label>
+
+<label class="option">
+  <span>Melancia</span>
+  <input type="checkbox" class="fruta" value="Melancia">
+</label>
+</div>
+
+
+
+
+<div class="section">
+<b>Sucos:</b>
+<select id="suco">
+  <option value="">Selecione</option>
+  <option>Acerola</option>
+  <option>Manga</option>
+  <option>Goiaba</option>
+  <option>Maracujá</option>
+  <option>Laranja</option>
+  <option>Graviola</option>
+</select>
+</div>
+
+<div class="section">
+<b>Ovos (2 unidades):</b>
+<select id="ovos">
+  <option value="">Selecione</option>
+  <option>Ovos mexidos</option>
+  <option>Ovos fritos</option>
+  <option>Ovos cozidos</option>
+</select>
+</div>
+
+<div class="section">
+<label><strong>Número do quarto:</strong></label> <br>
+<input type="text" id="quarto" placeholder="Ex: 203" required>
+</div>
+
+<div class="section">
+<label><strong>Horário (07:00 às 09:00):</strong></label>
+<input type="time" id="horaPedido" min="07:00" max="09:00" required>
+
+<div class="section"> <br>
+  <b>Observações (opcional):</b>
+  <textarea id="obs" placeholder="Ex: Sem açúcar, pão mais torrado..." 
+    style="width: 100%; height: 80px; padding: 10px; font-size: 16px; border-radius: 6px; border: 1px solid #999;"></textarea>
+</div>
+
+</div>
+
+<button onclick="enviarWhats()"><strong>Enviar pedido</strong></button>
+
+<script>
+
+ // checkboxes limite 2 (frutas) 
+ const checkboxes = document.querySelectorAll('.fruta');
+  const limite = 2;
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      const selecionadas = document.querySelectorAll('.fruta:checked').length;
+      
+      if (selecionadas > limite) {
+        cb.checked = false; // desfaz a seleção extra
+        alert("Você só pode escolher no máximo 2 frutas!");
+      }
+    });
+  });
+
+
+function enviarWhats() {
+
+  // Número do quarto (obrigatório)
+  const quarto = document.getElementById("quarto").value.trim();
+  if (!quarto) {
+    alert("⚠️ Informe o número do quarto.");
+    document.getElementById("quarto").focus();
+    return;
+  }
+
+  // Hora do pedido (obrigatória + validação)
+  const hora = document.getElementById("horaPedido").value;
+  if (!hora) {
+    alert("⚠️ Informe a hora do pedido.");
+    document.getElementById("horaPedido").focus();
+    return;
+  }
+
+  // Converter a hora para formato minutos-base
+  const [h, m] = hora.split(":").map(Number);
+  const total = h * 60 + m;
+
+  const minPermitido = 7 * 60;   // 07:00 → 420 minutos
+  const maxPermitido = 9 * 60;   // 09:00 → 540 minutos
+
+  // Observações (opcional)
+  const obs = document.getElementById("obs").value.trim();
+
+  // Validação dos horários permitidos
+  if (total < minPermitido || total > maxPermitido) {
+    alert("⚠️ O horário do pedido deve ser entre 07:00 e 09:00.");
+    document.getElementById("horaPedido").focus();
+    return;
+  }
+
+  // Suco e ovos
+  const suco = document.getElementById("suco").value || "Não informado";
+  const ovos = document.getElementById("ovos").value || "Não informado";
+
+  // Itens escolhidos
+  let itens = [];
+  document.querySelectorAll('input[type="checkbox"]:checked')
+    .forEach(el => itens.push(el.value));
+
+  if (itens.length === 0) {
+    alert("⚠️ Selecione ao menos um item.");
+    return;
+  }
+
+  // Mensagem WhatsApp
+  let mensagem =
+    "☕ *Café da Manhã – Xodó Motel*%0A" +
+    "🏨 *Quarto:* " + quarto + "%0A" +
+    "⏰ *Hora do pedido:* " + hora + "%0A%0A" +
+    "📋 *Itens:*%0A- " + itens.join("%0A- ") + "%0A%0A" +
+    "🥤 *Suco:* " + suco + "%0A" +
+    "🍳 *Ovos:* " + ovos + "%0A%0A" +
+    "⏳ *Previsão:* 30 minutos";
+    if (obs !== "") {
+    mensagem += "%0A📝 *Observações:*%0A" + obs + "%0A";
+}
+
+
+  const telefone = "5575999099401";
+  const url = "https://wa.me/" + telefone + "?text=" + mensagem;
+
+  window.open(url, "_blank");
+}
+</script>
+</div>
+</body>
+</html>
